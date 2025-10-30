@@ -54,7 +54,7 @@ def motor_position():
 
 
 
-async def tusk_arm_movement(angle, vel = 750):
+async def front_arm_movement(angle, vel = 750):
     await motor.run_for_degrees(tusk_arm, angle, vel, stop = motor.HOLD)
 
 async def side_arm_movement(angle, velocity = 750):
