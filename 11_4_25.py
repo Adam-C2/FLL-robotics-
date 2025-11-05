@@ -263,7 +263,10 @@ def move_cm(speed, cm):
         speed: signed percentage (±100)
         cm: distance in centimeters to travel
     """
+    wait(0.5)
+    reset_yaw()
     move(speed, distance_angle_finder(cm))
+    stop()
 
 def turn(left, right, angle_change):
 
@@ -309,6 +312,7 @@ def turn(left, right, angle_change):
 
 async def stabilize():
     runloop.until(motion_sensor.stable)
+    reset_yaw()
 def junction_stop(side, speed):
     """
     Line-follow until junction is reached.
